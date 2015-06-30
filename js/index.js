@@ -2,6 +2,7 @@
  * Created by ding on 15-6-4.
  */
 
+
 function right_top_shop_info_scroll(){
     //console.log(count_i);
     //var count_i = 0;
@@ -21,20 +22,55 @@ function right_top_shop_info_scroll(){
         $(this).css({marginTop:"0px"}).find("div:first").appendTo(this);
     });
 }
+
 $().ready(function() {
     setInterval('right_top_shop_info_scroll()',3000);
-    setInterval('auto_play()',1000);
+
+    auto_play();
 });
 
+//function  $(id){
+//    return typeof id==='string'?document.getElementById(id):id;
+//}
+//window.onload = auto_play();
+
 function auto_play(){
-    var show_picture = document.getElementById("JS_focus_box");
-    var show_number = document.getElementById("JS_slide_nav");
-    console.log(show_picture);
-    console.log(show_number);
+    var index = 0;
+    var timer = null;
+    var show_number=document.getElementById('JS_slide_nav').getElementsByTagName('a');
+    var show_picture=document.getElementById('JS_focus_box').getElementsByTagName('div');
+    for(var i = 0;i<show_number.length;i++){
+        show_number[i].id=i;
+        show_number[i].onmouseover=function(){
+            clearInterval(timer);
+            change_option(this.id);
+        };
+        show_number[i].onmouseout=function(){
+            timer = setInterval(autoPlay,2000);
+        }
+    }
+    if(timer){
+        clearInterval(timer);
+        timer=null;
+    }
+    timer = setInterval(autoPlay,2000);
 
-    for(var i = 0;i<show_picture.length;i++){
-        show_picture[i].id = i;
+    function autoPlay(){
+        index++;
+        if(index >= show_number.length){
+            index = 0;
+        }
+        change_option(index);
+    }
 
+    function change_option(curent){
+        for(var j = 0;j<show_picture.length;j++){
+            show_picture[j].style.display='none';
+            show_number[j].style.background='#000'
+        }
+        show_number[curent].style.background='#c9033b';
+        show_picture[curent].style.display='block';
+        index = curent;
     }
 }
 
