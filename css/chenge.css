@@ -1,0 +1,19 @@
+#help_center{
+    background: url("../image/site-bg.png");
+    background-position: 2px -67px;
+}
+#change_city{
+    background: url("../image/site-bg.png");
+    background-position: -58px -79px;
+}
+
+#logo{
+    background: url("../image/site-bg.png");
+    background-position: -1px -98px;
+}
+#goods_cart{
+    background-position: -101px -59px
+}
+.icon_2{
+    margin-left:19px
+}

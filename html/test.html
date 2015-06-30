@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--<html>-->
+<!--<head>-->
+    <!--<title>不间断上下循环滚动的公告栏效果</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<table width="400" border="1" cellpadding="0" cellspacing="0">-->
+    <!--<tr>-->
+        <!--<td width=200 height=30>-->
+            <!--<div class="RPR-P1">-->
+                <!--<div class="RPR-P1-R2">-->
+                    <!--<div id="demo" style="overflow: hidden; width: 100%; height:25px; color:white; margin:0px;line-height:22px;">-->
+                        <!--<div id="demo1">-->
+                           <!--·<a href="javascript:alert('超链接')" style="text-decoration:none">本周捐赠111111111111亿元(8.22发布)</a><br>-->
+                            <!--·<a href="javascript:alert('超链接')" style="text-decoration:none">本周捐赠总额22222222万元(8.15发布)</a><br>-->
+                           <!--·<a href="javascript:alert('超链接')" style="text-decoration:none">本周捐赠总额333333333333亿元(8.8发布)</a><br>-->
+                        <!--</div>-->
+                        <!--<div id="demo2">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</td>-->
+    <!--</tr>-->
+<!--</table>-->
+<!--<script>-->
+    <!--var speed = 40-->
+    <!--var _demo = document.getElementById("demo");-->
+    <!--var _demo1 = document.getElementById("demo1");-->
+    <!--var _demo2 = document.getElementById("demo2");-->
+    <!--demo2.innerHTML=demo1.innerHTML-->
+    <!--function Marquee(){-->
+        <!--if(_demo2.offsetTop-_demo.scrollTop<=0){-->
+            <!--_demo.scrollTop-=_demo1.offsetHeight-->
+        <!--}else{-->
+            <!--_demo.scrollTop+= 1-->
+        <!--}-->
+    <!--}-->
+    <!--var MyMar=setInterval(Marquee,speed)-->
+    <!--_demo.onmouseover=function() {clearInterval(MyMar)}-->
+    <!--_demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)}-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--<style type="text/css">-->
+    <!--ul,li{margin:0;padding:0;font-size:12px;color:#999;}-->
+    <!--ul{height:20px;overflow:hidden;}-->
+    <!--ul li{line-height:20px;height:20px;}-->
+<!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<ul id="list">-->
+    <!--<li>“卧槽泥马”：又一网络新词1</li>-->
+    <!--<li>“卧槽泥马”：又一网络新词2</li>-->
+    <!--<li>“卧槽泥马”：又一网络新词3</li>-->
+    <!--<li>“卧槽泥马”：又一网络新词4</li>-->
+    <!--<li>“卧槽泥马”：又一网络新词5</li>-->
+<!--</ul>-->
+<!--<script type="text/javascript">-->
+    <!--function scroll(element, delay, speed, lineHeight) {-->
+        <!--var numpergroup = 1;-->
+        <!--var slideBox = (typeof element == 'string')?document.getElementById(element):element;-->
+        <!--var delay = delay||1000;-->
+        <!--var speed=speed||20;-->
+        <!--var lineHeight = lineHeight||5;-->
+        <!--var tid = null, pause = false;-->
+        <!--var liLength = slideBox.getElementsByTagName('li').length;-->
+        <!--var lack = numpergroup-liLength%numpergroup;-->
+        <!--for(i=0;i<lack-1;i++){-->
+            <!--slideBox.appendChild(document.createElement("li"));-->
+        <!--}-->
+        <!--var start = function() {-->
+            <!--tid=setInterval(slide, speed);-->
+        <!--}-->
+        <!--var slide = function() {-->
+            <!--if (pause) return;-->
+            <!--slideBox.scrollTop += 2;-->
+            <!--if ( slideBox.scrollTop % lineHeight == 0 ) {-->
+                <!--clearInterval(tid);-->
+                <!--for(i=0;i<numpergroup;i++){-->
+                    <!--slideBox.appendChild(slideBox.getElementsByTagName('li')[0]);-->
+                <!--}-->
+                <!--slideBox.scrollTop = 0;-->
+                <!--setTimeout(start, delay);-->
+            <!--}-->
+        <!--}-->
+        <!--slideBox.onmouseover=function(){pause=true;}-->
+        <!--slideBox.onmouseout=function(){pause=false;}-->
+        <!--setTimeout(start, delay);-->
+    <!--}-->
+    <!--scroll('list', 3000, 30, 0 );//停留时间，相对速度（越小越快）,每次滚动多少，最好和Li的Line-height一致。-->
+
+<!--</script>-->
+
+
+
+
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">-->
+<!--<html>-->
+<!--<head>-->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+    <!--<title>Jquery文字一行一行向上滚动-www.jbxue.com</title>-->
+    <!--<style type="text/css">-->
+        <!--ul,li{list-style:none; margin:0; padding:0;}-->
+        <!--.scroll{ width:500px; height:175px; overflow:hidden; border:1px solid #333; margin:50px auto 0;}-->
+        <!--.scroll li{ width:500px; height:25px; line-height:25px; overflow:hidden;}-->
+        <!--.scroll li a{ font-size:14px; font-family:"宋体";color:#333; text-decoration:none;}-->
+        <!--.scroll li a:hover{ text-decoration:underline;}-->
+    <!--</style>-->
+    <!--<script type="text/javascript" src="../js/jquery/1.5.1/jquery.min.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="scroll">-->
+    <!--<ul class="list">-->
+        <!--<li><a href="#" target="_blank">脚本学堂，提供丰富的脚本编程、网站编程、数据库等技术文章。</a></li>-->
+        <!--<li><a href="#" target="_blank">脚本学堂，提供丰富的脚本编程、网站编程、数据库等技术文章。</a></li>-->
+        <!--<li><a href="#" target="_blank">脚本学堂，提供丰富的脚本编程、网站编程、数据库等技术文章。</a></li>-->
+        <!--<li><a href="#" target="_blank">脚本学堂，提供丰富的脚本编程、网站编程、数据库等技术文章。</a></li>-->
+        <!--<li><a href="#" target="_blank">脚本学堂，提供丰富的脚本编程、网站编程、数据库等技术文章。</a></li>-->
+        <!--<li><a href="#" target="_blank">脚本学堂，提供丰富的脚本编程、网站编程、数据库等技术文章。</a></li>-->
+        <!--<li><a href="#" target="_blank">脚本学堂，提供丰富的脚本编程、网站编程、数据库等技术文章。</a></li>-->
+    <!--</ul>-->
+<!--</div>-->
+<!--<script type="text/javascript" src="../js/index.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />-->
+    <!--<title>首届跨领域技术体验峰会</title>-->
+    <!--<style type="text/css">-->
+        <!--div,div{margin:0;padding:0}-->
+        <!--#scrollDiv{width:300px;height:25px;line-height:25px;border:#ccc 1px solid;overflow:hidden}-->
+        <!--#scrollDiv div{height:25px;padding-left:10px;}-->
+    <!--</style>-->
+    <!--<script src="../js/jquery.js" type="text/javascript"></script>-->
+    <!--<script type="text/javascript">-->
+        <!--function AutoScroll(obj){-->
+            <!--$(obj).find("div:first").animate({-->
+                <!--marginTop:"-25px"-->
+            <!--},500,function(){-->
+                <!--$(this).css({marginTop:"0px"}).find("div:first").appendTo(this);-->
+            <!--});-->
+        <!--}-->
+        <!--$(document).ready(function(){-->
+            <!--setInterval('AutoScroll("#scrollDiv")',1000)-->
+        <!--});-->
+    <!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="scrollDiv">-->
+    <!--<div>-->
+        <!--<div><a href='http://www.miiceic.org.cn/'>11111111111</a></div>-->
+        <!--<div><a href='http://www.ciitn.com/'>22222222222222</a></div>-->
+        <!--<div><a href="http://www.amboedu.com/">333333333333</a></div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<HTML>-->
+<!--<HEAD>-->
+    <!--<TITLE>使用onBlur事件处理程序</TITLE>-->
+<!--</HEAD>-->
+<!--<BODY BGCOLOR="lavender">-->
+<!--<FORM name="F1">-->
+    <!--<INPUT TYPE=text NAME=text1 value="1111ONBLUR_green" ONBLUR="(document.bgColor='green')">-->
+    <!--<INPUT TYPE=text NAME=text2 value="2222ONBLUR_black" ONBLUR="(document.bgColor='black')">-->
+    <!--<INPUT TYPE=text NAME=text2 value="3333ONBLUR_yellow" ONBLUR="(document.bgColor='yellow')">-->
+    <!--<br>-->
+    <!--<p>-->
+        <!--<INPUT TYPE=text NAME=text3 value="4444onfocus_blue" onfocus="(document.bgColor='blue')">-->
+        <!--<INPUT TYPE=text NAME=text4 value="5555onfocus_red" onfocus="(document.bgColor='red')">-->
+        <!--<INPUT TYPE=text NAME=text4 value="6666onfocus_orange" onfocus="(document.bgColor='orange')">-->
+<!--</FORM>-->
+<!--</BODY>-->
+<!--</HTML>-->
+
+<html>
+ <head>
+     <title>OnFocus事件</title>
+     </head>
+ <body>
+
+ <!--<input type="text" value="请输入用户名" onfocus="if(value=='请输入用户名') {value=''}" onblur="if (value=='') {value='请输入用户名'}">-->
+     <!--</Form>-->
+ <p>先看下使用mouseout的效果：</p>
+ <div id="container" style="width: 300px;">
+     <div id="title" style="cursor: pointer; background: #ccc;">使用了mouseout事件↓</div>
+     <div id="list" style="display: none; position: absolute; background:#fff; border: 1px solid #ccc; width: 298px;">
+         <div>第一行</div>
+         <div>第二行</div>
+         <div>第三行</div>
+     </div>
+ </div>
+ <script type='text/javascript'>
+     jQuery(document).ready(function($) {
+         $("#title").mouseover(function() {
+             var offset = $(this).offset();
+             $("#list").css({left: offset.left, top: offset.top+19}).show();
+         });
+         $("#container").mouseout(function() {
+             $("#list").hide();
+         });
+     });
+ </script>
+
+
+ </body>
+ </html>
